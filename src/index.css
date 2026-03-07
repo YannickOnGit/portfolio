@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+
+@theme {
+  --border-color: theme("colors.gray.300");
+}
+
+@layer base {
+  * {
+    border-color: var(--border-color);
+  }
+}
+
+:root {
+ /* font-family: IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif; */
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  font-weight: 400;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  font-weight: 400;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Typography */
+
+@layer base {
+  h1 {
+    @apply text-5xl font-normal leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl font-light leading-tight;
+  }
+
+  h3 {
+    @apply text-3xl font-light leading-snug;
+  }
+
+  h4 {
+    @apply text-2xl font-medium leading-snug;
+  }
+
+  h5 {
+    @apply text-lg font-medium leading-snug;
+  }
+
+  h6 {
+    @apply text-base font-medium leading-snug;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  small {
+    @apply text-sm text-gray-500;
+  }
+
+  /*
+  a {
+    @apply text-blue-600 underline hover:text-blue-800;
+  }
+  */
+
+  strong {
+    @apply font-semibold;
+  }
+
+  blockquote {
+    @apply italic text-gray-600 border-l-4 border-gray-300 pl-4;
+  }
+
+  
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+
+  li {
+    @apply mb-1;
+  }
+  
+}
+
+/* Example (Tailwind or global stylesheet) */
+.group-open {
+  background-color: #1e293b; /* Example: bg-slate-800 */
+  width: 100%;
+}
+
+.group-collapsed {
+  width: 100%;
+}
+
+.is-active {
+  background-color: #334155; /* Example: bg-slate-700 */
+  font-weight: bold;
+}
