@@ -1,9 +1,9 @@
 {
-  "name": "tailwind4",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yannickongit.github.io/React-Tailwind4.github.io/",
+  "homepage": "https://yannickongit.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,7 +18,7 @@
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.6.3",
+    "react-router-dom": "^6.30.3",
     "recharts": "^2.15.1",
     "tailwindcss": "^4.1.1",
     "three": "^0.183.1"

@@ -1,261 +1,385 @@
-// import image001 from '/src/assets/VS-Old-CallerUI.png';
-// import image002 from '/src/assets/VS-CallerUI-001.png';
-import type { ReactNode } from 'react';
+import ImageCarousel2 from "../components/ImageCarousel2";
+import image001 from "/src/assets/Case 03/Case-001-Main.png";
+import image002 from "/src/assets/Case 03/Case-001-Wireframe-A.png";
+import image003 from "/src/assets/Case 03/Case-001-Wireframe-B.png";
+import image004 from "/src/assets/Case 03/Case-001-Wireframe-C.png";
+import image005 from "/src/assets/Case 03/Case-001-Wireframe-D.png";
 
-type SectionProps = {
-  title: string;
-  children: ReactNode;
-};
+export default function Case01() {
+  const images = [
+    {
+      src: image001,
+      alt: "Complex Contact priorization query allowing to filter and triage contact to whom",
+    },
+    {
+      src: image002,
+      alt: "UI Compnenets exploded view",
+    },
+    {
+      src: image003,
+      alt: "Wireframes A",
+    },
+    {
+      src: image004,
+      alt: "Wireframes B",
+    },
+    {
+      src: image005,
+      alt: "Wireframes c",
+    },
+  ];
 
-const Section = ({ title, children }: SectionProps) => (
-  <div className="w-full">
-    <div className="max-w-screen-lg mx-auto px-6">
-      <div>
-        <h2 className=" text-zinc-900 mb-4">{title}</h2>
-      </div>
-      <div className="pt-4 pb-9">{children}</div>
-    </div>
-  </div>
-);
-
-const journeyData = [
-  {
-    stage: "Login / Start Shift",
-    tenantAdminAction: "Set up rules and priority levels (P1, P2, subgroups).",
-    endUserAction: "Logs into VanillaSoft dashboard; sees queued leads based on priority and last result codes.",
-    systemResponse: "Displays leads in queue order automatically based on rules and last result codes.",
-    tenantAdminThoughts: "I hope the queue reflects our rules correctly.",
-    endUserThoughts: "System already knows my top leads.",
-    painPoints: "Initial skepticism about automated priorities.",
-    opportunities: "Show a summary or visual cue explaining lead prioritization."
-  },
-  {
-    stage: "Review Automated Queue",
-    tenantAdminAction: "Monitor queue performance and adjust if needed.",
-    endUserAction: "Reviews queued leads to decide which to contact first.",
-    systemResponse: "Highlights high-priority leads visually (color coding, icons).",
-    tenantAdminThoughts: "Are top leads really correct based on our rules?",
-    endUserThoughts: "I can start with the highest-priority leads.",
-    painPoints: "Complexity of priority rules may be unclear.",
-    opportunities: "Visual indicators to explain priority and scheduling logic."
-  },
-  {
-    stage: "Examine Lead Details",
-    tenantAdminAction: "Ensure all necessary data points are available for agents.",
-    endUserAction: "Opens lead profiles for context before outreach.",
-    systemResponse: "Displays last result code, engagement score, and subgroup info.",
-    tenantAdminThoughts: "Do agents have enough context?",
-    endUserThoughts: "I have context on each lead’s last activity and priority.",
-    painPoints: "Incomplete data can confuse agent decisions.",
-    opportunities: "Inline summary of key metrics affecting prioritization."
-  },
-  {
-    stage: "Outreach / Contact",
-    tenantAdminAction: "Monitor engagement and follow-up metrics.",
-    endUserAction: "Contacts lead via preferred channel (call, email, SMS).",
-    systemResponse: "Automatically updates lead status and reschedules based on outcome.",
-    tenantAdminThoughts: "Are agents contacting leads efficiently?",
-    endUserThoughts: "I’m engaging the right leads at the right time.",
-    painPoints: "Risk of missing leads if rules misunderstood.",
-    opportunities: "Tooltip indicating why this lead was queued now."
-  },
-  {
-    stage: "Record Outcome / Update Result Code",
-    tenantAdminAction: "Adjust rules if patterns emerge.",
-    endUserAction: "Logs call result or engagement outcome.",
-    systemResponse: "Re-queues leads dynamically based on new result codes.",
-    tenantAdminThoughts: "Rules need to adapt automatically.",
-    endUserThoughts: "System adapts automatically; no manual sorting required.",
-    painPoints: "High volume can be overwhelming without cues.",
-    opportunities: "Dynamic preview of next lead to reduce uncertainty."
-  },
-  {
-    stage: "Continuous Monitoring",
-    tenantAdminAction: "Review metrics: call volume, conversions, engagement.",
-    endUserAction: "Observes progress toward daily goals.",
-    systemResponse: "Provides dashboard visualizations and insights.",
-    tenantAdminThoughts: "Are rules achieving desired results?",
-    endUserThoughts: "I can see how effective the queue is.",
-    painPoints: "Interpreting raw data can be challenging.",
-    opportunities: "Dashboards with clear KPIs and visual insights."
-  },
-  {
-    stage: "Iteration / Optimization",
-    tenantAdminAction: "Refine rules or subgroups (P1a, P1b) for better outcomes.",
-    endUserAction: "—",
-    systemResponse: "System applies new rules dynamically.",
-    tenantAdminThoughts: "Optimization improves efficiency over time.",
-    endUserThoughts: "—",
-    painPoints: "Frequent changes can confuse agents.",
-    opportunities: "Communicate updates clearly with notifications."
-  }
-];
-
-export default function Case03() {
   return (
-    <>
+    <div className="text-white">
+      {/* Intro Header */}
+      <div className="w-full px-6 xl:px-0">
+        <div className="max-w-screen-lg mx-auto">
 
-
-      <div className="bg-zinc-950 w-full text-gray-200">
-        <div className="max-w-screen-lg mx-auto flex flex-nowrap space-x-1 px-6 pt-20 pb-12 mb-12 ">
-          <div className="basis-6/8">
-            <h4 className="text-indigo-400">Dynamic, Multi-Level Contact Prioritization for Sales Efficiency</h4>
-            <h1 className="">UX Case 03: Intellective Routing</h1>
-            <h4 className="basis-1/3 pt-6">Designed a multi-level contact prioritization framework for VanillaSoft that lets sales teams create custom rules to focus on high-value leads. The solution improved workflow efficiency, boosted conversion rates, and enhanced user satisfaction by balancing powerful features with a simple, intuitive design.</h4>
-          </div>
-        </div>
-      </div>
-
-      { /* Role & Contribution */}
-      <Section title="Role & Contribution">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Led end-to-end feature design: research, user flows, wireframes, high-fidelity UI design.</li>
-          <li>Defined functional requirements and collaborated with developers during implementation.</li>
-          <li>Conducted usability testing and iterated designs based on agent feedback.</li>
-          <li>Designed a visual query-building interface to simplify complex prioritization logic.</li>
-          <li>Customers also needed flexibility to use any data type and create subgroups (e.g., P1a, P1b), increasing complexity.</li>
-        </ul>
-      </Section >
-
-      { /* Context */}
-      <Section title="Context">
-        <p className="pb-4">VanillaSoft is a cloud-based sales management platform integrating CRM, lead management, and telemarketing tools. It uses a queue-based approach to guide agents to the next best contact, based on data points such as renewal dates, rather than static lists. This ensures sales teams focus on the most relevant leads at the optimal time.</p>
-      </Section >
-
-      { /* Business Problem */}
-      <Section title="Business Problem">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Customers requested the ability to implement multiple levels of prioritization (P1, P2, etc.) to better target high-value leads.</li>
-          <li>Current platform lacked dynamic prioritization, limiting workflow efficiency.</li>
-          <li>Customers also needed flexibility to use any data type and create subgroups (e.g., P1a, P1b), increasing complexity.</li>
-        </ul>
-      </Section >
-
-      { /* Business Goal */}
-      <Section title="Business Goal">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Improve sales team efficiency and conversion rates by directing agents to the most promising leads.</li>
-          <li>Provide flexibility to define rules across diverse data types and multiple levels of prioritization.</li>
-          <li>Ensure the system remains intuitive and accessible to prevent cognitive overload.</li>
-        </ul>
-      </Section >
-
-      { /* Research and Insights */}
-      <Section title="Research and Insights">
-        <p className="pb-4"><strong>Methods:</strong> Customer feedback analysis, scenario mapping, edge case exploration.</p>
-        <p className="pb-4"><strong>Findings:</strong></p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Customers required complex inclusion/exclusion rules (e.g., prioritize A, C, F unless B = X).</li>
-          <li>Early limitations risked extensive rework later. Supporting broad flexibility from the start was safer.</li>
-          <li>Designing for both power users and non-technical users was essential.</li>
-        </ul>
-      </Section >
-
-      {/* User Journey Map */}
-      <div className="w-full text-gray-200 text-sm">
-        <div className="max-w-screen-xl mx-auto">
-          <h3 className="text-indigo-400 text-2xl pb-8">User Journey</h3>
-        </div>
-
-        <div className="w-full bg-zinc-900 text-gray-200 pt-6 mb-18">
-          <div className="max-w-screen-xl mx-auto px-4">
-
-            {/* Desktop Table */}
-            <div className="hidden md:grid grid-cols-8 gap-4 border-b border-gray-700 pb-4 font-semibold text-white">
-              <div>Stage</div>
-              <div>Tenant/Admin Action</div>
-              <div>End-User Action</div>
-              <div>System Response</div>
-              <div>Tenant/Admin Thoughts</div>
-              <div>End-User Thoughts</div>
-              <div>Pain Points / Risks</div>
-              <div>Opportunities / Improvement</div>
+          <h1>Case 003 : Intellective Routing</h1>
+          <h2 className="uppercase mb-12 font-light leading-none bg-stone-800/50">
+            <span className="uppercase font-bold">Dynamic Prioritization </span>
+            Flexible Query-Building for Sales Workflows
+          </h2>
+          <div className="lg:flex gap-6 py-6">
+            <div className="flex-1/3 mb-6">
+              <h4 className="text-cyan-300/90">
+                Contributions
+              </h4>
+              <ul className="mt-4 space-y-1 text-lg text-stone-300">
+                <li>Contextual & User Research</li>
+                <li>Workflow & Task Analysis</li>
+                <li>Technical Research</li>
+                <li>Feasibility Study</li>
+                <li>Feature Architecture & </li>
+                <li>Implementation Guidance</li>
+              </ul>
             </div>
 
-            {/* Desktop Rows */}
-            <div className="hidden md:block">
-              {journeyData.map((row, i) => (
-                <div
-                  key={i}
-                  className={`grid grid-cols-8 gap-4 py-4 border-b border-gray-800 ${i % 2 === 0 ? 'bg-zinc-900' : 'bg-zinc-800'}`}
-                >
-                  <div className="px-2 py-1">{row.stage}</div>
-                  <div className="px-2 py-1">{row.tenantAdminAction}</div>
-                  <div className="px-2 py-1">{row.endUserAction}</div>
-                  <div className="px-2 py-1">{row.systemResponse}</div>
-                  <div className="px-2 py-1">{row.tenantAdminThoughts}</div>
-                  <div className="px-2 py-1">{row.endUserThoughts}</div>
-                  <div className="px-2 py-1">{row.painPoints}</div>
-                  <div className="px-2 py-1">{row.opportunities}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile Collapsible Cards */}
-            <div className="md:hidden space-y-4">
-              {journeyData.map((row, i) => (
-                <details
-                  key={i}
-                  className="bg-zinc-800 rounded-lg p-4"
-                >
-                  <summary className="font-semibold text-white cursor-pointer">
-                    {row.stage}
-                  </summary>
-                  <div className="mt-2 space-y-2 text-gray-200">
-                    <p><strong>Tenant/Admin Action:</strong> {row.tenantAdminAction}</p>
-                    <p><strong>End-User Action:</strong> {row.endUserAction}</p>
-                    <p><strong>System Response:</strong> {row.systemResponse}</p>
-                    <p><strong>Tenant/Admin Thoughts:</strong> {row.tenantAdminThoughts}</p>
-                    <p><strong>End-User Thoughts:</strong> {row.endUserThoughts}</p>
-                    <p><strong>Pain Points / Risks:</strong> {row.painPoints}</p>
-                    <p><strong>Opportunities / Improvement:</strong> {row.opportunities}</p>
-                  </div>
-                </details>
-              ))}
+            <div className="flex-2/3">
+              <h4 className="text-cyan-300/90">Assignment</h4>
+              <p>
+                The objective of this project was to design a flexible contact
+                prioritization system within VanillaSoft that would allow sales
+                teams to focus on the most relevant leads at the optimal time.
+              </p>
+              <p>
+                The platform needed to support multiple levels of
+                prioritization, such as P1 and P2, as well as more granular
+                sub-levels like P1a or P1b. In addition to basic prioritization,
+                users required the ability to define custom rules using
+                different data points, including purchase history, engagement
+                levels, and other behavioral indicators.
+              </p>
+              <p>
+                <strong>My role</strong> was to research customer needs,
+                evaluate technical constraints, and design an interface capable
+                of managing complex prioritization logic without overwhelming
+                users. The goal was to create a system that remained flexible
+                for advanced use cases while still being approachable for
+                everyday users.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      { /* Hypothesis */}
-      <Section title="Hypothesis">
-        <p className="pb-4">By implementing a customizable prioritization framework, users will:</p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Focus on the most relevant leads at the right time.</li>
-          <li>Improve efficiency and shorten sales cycles.</li>
-          <li>Adapt workflows without vendor or IT support.</li>
-        </ul>
-        <p className="pt-4">However, without a clear and intuitive UI, the complexity could overwhelm users. Simplicity in interaction design would be critical to adoption.</p>
-      </Section>
+      <ImageCarousel2 images={images} />
 
-      { /* Design Solution */}
-      <Section title="Design Solution">
-        <p className="pb-4">Query-Building Framework for Prioritization</p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Enhanced Lead Prioritization: Implemented real-time, customizable routing filters that dynamically rank leads based on various criteria, ensuring agents always engage with the most relevant prospects.</li>
-          <li>Streamlined Workflow: Introduced a queue-based routing system that automates lead assignment, reducing decision fatigue and allowing agents to focus on high-value interactions.</li>
-          <li>Continuous Optimization: Developed an intuitive interface for administrators to adjust routing filters and criteria in real-time, enabling ongoing refinement of lead prioritization strategies without disrupting agent productivity.</li>
-        </ul>
-      </Section>
+      {/* Problem & Goal Section */}
 
-      { /* Challenges & Lessons Learned */}
-      <Section title="Challenges & Lessons Learned">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Balancing flexibility with simplicity in the user interface.</li>
-          <li>Designing a rules builder that communicates complex conditions clearly.</li>
-          <li>Ensuring adaptability to future scenarios without costly rework.</li>
-        </ul>
-      </Section>
+      {/* Overview */}
 
-      { /* Results / Impact */}
-      <Section title="Results / Impact">
-        <ul>
-          <li>Achieved a 500% increase in call volume without additional operational overhead, as reported by One of a Kind Sales.</li>
-          <li>Streamlined lead management processes, reducing manual intervention and administrative overhead, as experienced by SalesRoads.</li>
-          <li>Enhanced lead prioritization and routing, leading to improved sales efficiency and conversion rates.</li>
-        </ul>
-      </Section>
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="flex">
+            <div className="flex-1/4">
+              <h3 className="">Overview</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  VanillaSoft is a cloud-based sales management platform that
+                  integrates CRM, lead management, and telemarketing tools to
+                  support high-volume sales workflows.{" "}
+                </p>
+                <p>
+                  A key differentiator of the platform is its queue-based model,
+                  which routes agents to the next best contact using available
+                  data points rather than relying on static contact lists. This
+                  approach improves operational efficiency by ensuring agents
+                  engage with the most relevant leads at the appropriate moment.
+                </p>
+              </div>
+              <div className=" flex-1/2">
+                <p>
+                  Introducing dynamic prioritization required extending this queue
+                  logic so that organizations could better control how leads were
+                  ranked and distributed to agents based on their own business
+                  strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    </>
+      {/* Observations */}
+
+      <div className="w-full px-6 xl:px-0 py-12 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Observation</h3>
+            </div>
+            <div className="flex-3/4">
+              <blockquote className="border-l-4 border-teal-300/80 pl-6">
+                Several customers requested the ability to prioritize contacts
+                using multiple levels of importance. Their goal was to focus
+                sales efforts on leads that were more likely to convert while
+                still maintaining visibility over the broader pipeline.
+              </blockquote>
+              <blockquote className="mt-6 border-l-4 border-teal-300/80 pl-6">
+                At the time, the platform lacked the ability to support this
+                type of dynamic prioritization. Contacts were processed through
+                the queue, but users could not define layered rules based on
+                different attributes or conditions.
+              </blockquote>
+              <blockquote className="mt-6 border-l-4 border-teal-300/80 pl-6">
+                The challenge was not only technical but also conceptual.
+                Customers needed the flexibility to combine many different data
+                points and conditions, sometimes creating complex scenarios
+                where contacts should be prioritized under certain circumstances
+                and deprioritized under others. At the same time, the interface
+                needed to remain understandable and manageable for sales teams
+                who were not necessarily technical users.
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Research */}
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className="">Research</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  To understand the scope of the problem, we reviewed customer
+                  requests and documented a wide range of prioritization
+                  scenarios. These examples revealed that organizations often
+                  wanted to combine multiple conditions when determining which
+                  leads should be prioritized. In some cases, contacts might need
+                  to be prioritized if they met several criteria but deprioritized
+                  if another condition was present.
+                </p>
+              </div>
+              <div className=" flex-1/2">
+                <p>
+                  Because the number of possible combinations was large, we
+                  concluded that the safest approach would be to design a
+                  framework capable of supporting a wide range of use cases from
+                  the start. Restricting the system too early could lead to
+                  limitations and future rework as new customer requirements
+                  emerged.
+                </p>
+                <p>
+                  Another important aspect of the research focused on the user
+                  interface. The feature needed to present complex rule logic in a
+                  way that remained accessible to users while still offering the
+                  flexibility required by more advanced workflows.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Hypothesis */}
+
+      <div className="w-full px-6 xl:px-0 py-16 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className=" mb-12">Hypothesis</h3>
+            </div>
+            <div className="flex-3/4">
+              <blockquote className="mb-6 border-l-4 border-teal-300/80 pl-6">
+                We hypothesized that introducing a flexible prioritization
+                system would significantly improve how sales teams manage and
+                engage with leads. By allowing users to define multiple priority
+                levels and apply rules based on relevant data points, agents
+                would be guided toward the most promising opportunities at the
+                right time.
+              </blockquote>
+              <blockquote className="mb-6 border-l-4 border-teal-300/80 pl-6">
+                This capability was expected to improve operational
+                efficiency and potentially increase conversion rates by enabling
+                more targeted sales strategies. At the same time, we recognized
+                that a feature of this complexity could introduce usability
+                challenges. Ensuring that the interface remained intuitive and
+                navigable was therefore critical to preventing cognitive
+                overload and encouraging adoption.
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Solution */}
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className="">Solution</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  To support dynamic prioritization, a query-building framework
+                  was introduced that allowed users to define and manage complex
+                  prioritization rules using different types of data.
+                </p>
+                <p>
+                  The system supports multiple prioritization criteria and
+                  enables users to combine conditions using logical operators
+                  such as AND and OR. This makes it possible to create layered
+                  rules that reflect the realities of sales workflows, where
+                  decisions are often based on several data points rather than a
+                  single attribute.
+                </p>
+              </div>
+              <div className="flex-1/2">
+                <p>
+                  Users can also define priority levels such as P1 or P2 and
+                  extend them with sub-levels when additional granularity is
+                  required. This allows organizations to structure their lead
+                  prioritization in a way that reflects their own business
+                  processes.
+                </p>
+                <p>
+                  A significant focus was placed on keeping the interface
+                  approachable despite the flexibility of the system. Visual
+                  guidance, tooltips, and a structured workflow help users build
+                  prioritization rules step by step, reducing the risk of
+                  confusion while still supporting advanced configurations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Feature */}
+
+      <div className="w-full px-6 xl:px-0 py-16 bg-stone-800/20 border-stone-800">
+        <div className="w-full px-6 xl:px-0">
+          <div className="max-w-screen-lg mx-auto">
+            <div className="lg:flex">
+              <div className="flex-1/4">
+                <h3 className="">Feature</h3>
+              </div>
+              <div className="flex-3/4">
+                <h4 className="text-cyan-300/90">
+                  Multi‑Criteria Prioritization
+                </h4>
+                <p>
+                  Users can define rules based on numerous data attributes such as
+                  engagement, behavior, and historical performance.
+                </p>
+
+                <h4 className="text-cyan-300/90">Flexible Rule Logic</h4>
+                <p>
+                  Support for logical operators and layered conditions allows the
+                  construction of nuanced prioritization strategies without
+                  coding.
+                </p>
+
+                <h4 className="text-cyan-300/90">Custom Priority Levels</h4>
+                <p>
+                  Priority groups and sub‑levels give organizations the
+                  flexibility to represent their sales logic structurally.
+                </p>
+
+                <h4 className="text-cyan-300/90">Guided Rule Builder UI</h4>
+                <p>
+                  Visual cues and structured workflows make rule building
+                  understandable and accessible, reducing cognitive overload.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Outcomes */}
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className="">Outcomes</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  The prioritization framework introduced a new level of
+                  flexibility in how sales teams manage their lead queues.
+                  Instead of relying on static prioritization rules,
+                  organizations can now adapt their strategies based on the data
+                  available in their CRM.
+                </p>
+              </div>
+              <div className="flex-1/2">
+                <p>
+                  Initial feedback indicated that users appreciated the
+                  increased visibility into prioritization logic and the ability
+                  to refine how leads were distributed to agents. The system
+                  also reduced the need for manual lead management, allowing
+                  teams to focus more directly on sales activities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Results & Business Impact */}
+
+      <div className="w-full bg-stone-800/20 py-20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto px-6 xl:px-0">
+          <h3 className="mb-8">Results & Business Impact</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+              <h2 className="text-6xl mb-2 text-cyan-300/90">+20%</h2>
+              <p>Increase in dials</p>
+            </div>
+            <div>
+              <h2 className="text-6xl mb-2 text-cyan-300/90">+22%</h2>
+              <p>Increase in conversions</p>
+            </div>
+            <div>
+              <h2 className="text-6xl mb-2 text-cyan-300/90">-40%</h2>
+              <p>Decrease in negative dispositions</p>
+            </div>
+            <div>
+              <h2 className="text-6xl mb-2 text-cyan-300/90">+28%</h2>
+              <p>Increase in sales</p>
+            </div>
+          </div>
+          <small>Source: VanillaSoft</small>
+        </div>
+      </div>
+
+      <p className=" mt-24 text-center">
+        © {new Date().getFullYear()} Yannick Boulanger. All rights reserved.
+      </p>
+    </div>
   );
 }

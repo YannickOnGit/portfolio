@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   --border-color: theme("colors.gray.300");
 }
@@ -11,10 +10,14 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
- /* font-family: IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif; */
-  
-  font-family: 'Source Sans Pro', sans-serif;
+  /* font-family: IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif; */
+
+  font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -47,9 +50,9 @@ button:hover {
   font-weight: 400;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: -2px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -71,23 +74,27 @@ button:focus-visible {
 
 @layer base {
   h1 {
-    @apply text-5xl font-normal leading-tight;
+    @apply  text-4xl mb-3 pb-16 font-light leading-snug text-stone-100 ;
   }
 
   h2 {
-    @apply text-4xl font-light leading-tight;
+    @apply text-5xl pb-6 sm:text-7xl font-light leading-none text-stone-100;
+  }
+
+  h2#summary-heading  {
+    @apply  text-4xl;
   }
 
   h3 {
-    @apply text-3xl font-light leading-snug;
+    @apply text-3xl mb-4 font-light leading-snug  text-stone-100;
   }
 
   h4 {
-    @apply text-2xl font-medium leading-snug;
+    @apply text-3xl mb-4 font-light leading-snug;
   }
 
   h5 {
-    @apply text-lg font-medium leading-snug;
+    @apply text-2xl font-medium leading-snug;
   }
 
   h6 {
@@ -95,11 +102,11 @@ button:focus-visible {
   }
 
   p {
-    @apply text-base leading-relaxed;
+    @apply text-base mb-6 text-stone-300;
   }
 
   small {
-    @apply text-sm text-gray-500;
+    @apply text-sm text-stone-500;
   }
 
   /*
@@ -113,27 +120,31 @@ button:focus-visible {
   }
 
   blockquote {
-    @apply italic text-gray-600 border-l-4 border-gray-300 pl-4;
+    @apply text-lg text-stone-300 border-l-4 border-gray-300 pl-4;
   }
 
-  
   ul {
-    @apply list-disc list-inside;
+    @apply list-disc list-inside text-lg;
   }
 
   ol {
-    @apply list-decimal list-inside;
+    @apply list-decimal list-inside ;
   }
 
   li {
-    @apply mb-1;
+    @apply text-stone-200  text-base;
   }
-  
+
+  strong {
+    @apply font-medium;
+  }
 }
 
 /* Example (Tailwind or global stylesheet) */
+
 .group-open {
-  background-color: #1e293b; /* Example: bg-slate-800 */
+  background-color: #1e293b;
+  /* Example: bg-slate-800 */
   width: 100%;
 }
 
@@ -142,6 +153,5 @@ button:focus-visible {
 }
 
 .is-active {
-  background-color: #334155; /* Example: bg-slate-700 */
-  font-weight: bold;
+  @apply bg-stone-700/30;
 }

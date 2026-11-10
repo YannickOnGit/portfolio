@@ -1,284 +1,362 @@
-import image001 from '/src/assets/VS-Old-CallerUI.png';
-import image002 from '/src/assets/VS-CallerUI-001.png';
-import type { ReactNode } from 'react';
+import ImageCarousel2 from "../components/ImageCarousel2";
 
-type SectionProps = {
-  title: string;
-  children: ReactNode;
-};
-
-const Section = ({ title, children }: SectionProps) => (
-  <div className="w-full">
-    <div className="max-w-screen-lg mx-auto px-6">
-      <div>
-        <h2 className=" text-zinc-900 mb-4">{title}</h2>
-      </div>
-      <div className="pt-4 pb-9">{children}</div>
-    </div>
-  </div>
-);
-
-// Sample journeyData
-const journeyData = [
-  {
-    stage: '1. Start of Shift / Log In',
-    goals: 'Access Caller UI and start calling quickly',
-    actions: 'Open VanillaSoft in browser, log in',
-    painPoints: 'Slow setup; extra windows for tools',
-    opportunities: 'Single login with integrated tools; persist user layout preferences',
-  },
-  {
-    stage: '2. Reviewing Next Contact',
-    goals: 'Understand contact details before call',
-    actions: 'View queue-based contact info, check external tools',
-    painPoints: 'Switching windows increases cognitive load',
-    opportunities: 'Consolidate all customer details into one panel-based interface',
-  },
-  {
-    stage: '3. During the Call',
-    goals: 'Communicate, update CRM, manage compliance',
-    actions: 'Take notes, access scripts, process payments, send SMS/email',
-    painPoints: 'Switching tabs causes delays',
-    opportunities: 'Multi-panel workspace with resizable panels for scripts, compliance docs, payment tools',
-  },
-  {
-    stage: '4. Post-Call Actions',
-    goals: 'Complete follow-up efficiently',
-    actions: 'Update CRM, send confirmation, schedule follow-up',
-    painPoints: 'Slow navigation, prone to errors',
-    opportunities: 'Integrate post-call actions in Caller UI; fetch follow-up tools asynchronously',
-  },
-  {
-    stage: '5. Loop: Route Next Contact',
-    goals: 'Continue calling efficiently',
-    actions: 'Automatic routing based on queue',
-    painPoints: 'Manual switching causes delays',
-    opportunities: 'Automate routing and update UI dynamically',
-  },
-  {
-    stage: '6. End of Shift',
-    goals: 'Log off and review performance',
-    actions: 'Review call metrics, finalize tasks',
-    painPoints: 'Data spread across systems; no quick overview',
-    opportunities: 'Centralized dashboard summarizing calls, tasks, outcomes',
-  },
-];
+import image001 from "/src/assets/Case 01/Case-001-Caller-UI.png";
+import image002 from "/src/assets/Case 01/Case-001-User-Journey.png";
+import image003 from "/src/assets/Case 01/Case-001-Diagram.png";
+import image004 from "/src/assets/Case 01/Case-001-Screen-01.png";
+import image005 from "/src/assets/Case 01/Case-001-Screen-02.png";
+import image006 from "/src/assets/VS-Old-CallerUI.png";
 
 export default function Case01() {
+  const images = [
+    {
+      src: image001,
+      alt: "Final multi-panel workspace integrating CRM, scripts, and communication tools.",
+    },
+ //   {
+ //     src: image002,
+ //     alt: "Caller UI workflow illustrating the end-to-end user journey.",
+ //   },
+ //   {
+ //    src: image003,
+ //    alt: "UI panel architecture defining layout, hierarchy, and interactions.",
+ //   },
+    {
+      src: image004,
+      alt: "Multi-panel workspace with integrated SMS communication.",
+    },
+    {
+      src: image005,
+      alt: "Multi-panel workspace with heads-up display (HUD) interface.",
+    },
+  ];
+
   return (
     <div>
+      {/* Intro */}
 
-      {/* Intro Header */}
-      <div className="bg-zinc-950 w-full text-gray-200">
-        <div className="max-w-screen-lg mx-auto flex flex-nowrap space-x-1 px-6 pt-20 pb-12 mb-12 ">
-          <div className="basis-6/8">
-            <h4 className="text-indigo-400 pb-4">
-              Product case 01: Scalable, Multi-Panel Workspace for High-Volume Sales Workflows
-            </h4>
-            <h1 className="text-white">VanillaSoft Caller UI Redesign</h1>
-            <h4 className="pt-4">
-              Redesigned the Caller UI of VanillaSoft’s sales platform to modernize its look, improve usability, and solve scalability challenges for a growing user base.
-            </h4>
+      <div className="w-full px-6 xl:px-0">
+        <div className="max-w-screen-lg mx-auto">
+          <h1>Case 001 : VanillaSoft</h1>
+          <h2 className="uppercase mb-12 font-light leading-none bg-stone-800/50">
+          <span className="uppercase font-bold bg-red-stone/50 block">Interface Redesign </span>
+            Multi-Panel Workspace for Sales Workflows
+          </h2>
+          <div className="lg:flex gap-6 py-6">
+            <div className="flex-1/3 mb-6">
+              <h4 className="text-cyan-300/90">
+                Contributions
+              </h4>
+              <ul className="mt-4 space-y-1 text-lg">
+                <li>Contextual & User Research</li>
+                <li>Workflow & Task Analysis</li>
+                <li>Market & Competitor Analysis</li>
+                <li>Information Architecture</li>
+                <li>Interaction Design</li>
+                <li>Product Design & UI/UX</li>
+              </ul>
+            </div>
+            <div className="flex-2/3">
+              <h4 className="text-cyan-300/90">Assignment</h4>
+              <p>
+                The objective of this project was to redesign VanillaSoft’s core
+                Caller UI to improve usability, scalability, and overall user
+                satisfaction while modernizing its visual design and aligning it
+                with contemporary interaction standards.
+              </p>
+              <p>
+                The new interface was designed to support both novice and
+                experienced users, streamline complex sales workflows, and
+                accommodate a growing user base without compromising
+                performance.
+              </p>
+              <p>
+                The redesign focused on improving task efficiency, reducing
+                cognitive load, and providing a flexible, responsive workspace
+                across different devices and screen sizes.
+                I was responsible for research, design, front-end integration,
+                and QA throughout the project lifecycle.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Role & Contribution */}
-      <Section title="Role & Contribution">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Led end-to-end redesign: UX research, user flows, wireframes, high-fidelity design</li>
-          <li>Wrote functional requirements and collaborated with developers during implementation</li>
-          <li>Conducted usability testing, gathered feedback, iterated designs</li>
-          <li>Contributed to front-end development and QA/regression testing</li>
-        </ul>
-      </Section>
+      {/* Project gallery */}
+
+      <ImageCarousel2 images={images} />
 
       {/* Context */}
-      <Section title="Context">
-        <p className="pb-4">
-          VanillaSoft is a cloud-based sales management platform integrating CRM, lead management, and telemarketing tools. Its queue-based approach routes agents to the next best contact, preventing cherry-picking and promoting efficiency.
-        </p>
-        <p className="pb-2 font-semibold">Problem:</p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Outdated UI reduced engagement and adoption</li>
-          <li>Agents needed multiple browser windows for external tools, increasing cognitive load</li>
-          <li>Scalability, responsiveness, and accessibility were limited</li>
-        </ul>
-      </Section>
 
-      {/* Image */}
-      <div className="bg-white w-full text-gray-200 mb-9 border-y-1 border-zinc-400">
-        <div className="w-full">
-          <div className="max-w-screen-lg mx-auto flex flex-nowrap py-6 ">
-            <img className='mx-6 border-zinc-600 border-1' src={image001} alt="VanillaSoft UI overview" />
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Context</h3>
+            </div>
+            <div className="lg:flex  gap-6 flex-3/4">
+              <div className="flex-1/2">
+                <p>
+                  VanillaSoft is a cloud-based sales management platform that integrates CRM, lead management, and telemarketing tools to streamline sales team workflows. It helps organizations manage outreach and customer relationships in a more structured and efficient way.
+                </p>
+              </div>
+              <div className="flex-1/2">
+                <p>
+                  What sets VanillaSoft apart from competitors is its queue-based approach, which routes agents to the next best contact based on available data instead of a traditional list-based system. This prevents agents from cherry-picking contacts and promotes efficiency, enabling faster and more effective workflows.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Business Goal */}
-      <Section title="Business Goal">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Modernize UI for usability and visual appeal</li>
-          <li>Consolidate tools into a unified interface to reduce cognitive load</li>
-          <li>Build a scalable, flexible UI supporting future growth</li>
-          <li>Ensure WCAG 2.0 accessibility compliance</li>
-          <li>Enable smooth integration with backend systems</li>
-        </ul>
-      </Section>
+      {/* Observations */}
 
-      {/* Research & Insights */}
-      <Section title="Research & Insights">
-        <p className="pb-2 font-semibold">Methods:</p>
-        <p className="pb-4">Proto-personas, market analysis, workstation photos, colleague feedback</p>
-        <p className="pb-2 font-semibold">Key Findings:</p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Agents used multiple windows for VanillaSoft + external tools</li>
-          <li>Context-switching slowed workflows and increased errors</li>
-        </ul>
-        <p className="pt-4 font-semibold">Opportunity:</p>
-        <p>Consolidate critical tools and information into a single workspace</p>
-      </Section>
-
-      {/* Caller UI User Journey */}
-      <div className="w-full text-gray-800 py-6 mb-12 border-y-1 border-zinc-800 text-sm">
-        <div className="max-w-screen-xl mx-auto">
-        <h3 className="text-indigo-800 text-2xl pb-4">User Journey: Caller UI Workflow</h3>
+      <div className="w-full px-6 xl:px-0 py-12 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Observation</h3>
+            </div>
+            <div className="flex-3/4">
+              <blockquote className="border-l-4 border-teal-300/80 pl-6 italic text-stone-400">
+                The Caller UI, a central part of the platform used during live
+                calls, had become visually and technically outdated. As the
+                product evolved, the interface became increasingly difficult to
+                extend and maintain.
+              </blockquote>
+              <blockquote className="mt-6 border-l-4 border-teal-300/80 pl-6 italic text-stone-400">
+                Our research revealed that agents relied heavily on the Caller
+                UI to input data but frequently had to switch between multiple
+                tools to access customer information, scripts, and reference
+                documents. This increased cognitive load, slowed workflows, and reduced
+                call quality.
+              </blockquote>
+              <blockquote className="mt-6 border-l-4 border-teal-300/80 pl-6 italic text-stone-400">
+                Additionally, the interface architecture made it difficult to
+                scale the UI as new features were added. The redesign needed
+                to improve workflow efficiency while supporting the platform’s
+                long-term evolution.
+              </blockquote>
+            </div>
+          </div>
         </div>
-        <div className="max-w-screen-xl mx-auto border-zinc-600 border-1">
-          
+      </div>
 
-          {/* Desktop Table */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-gray-700 py-4 font-semibold text-zinc-800">
-            <div className='pl-4'>Stage</div>
-            <div>User Goals</div>
-            <div>Actions</div>
-            <div>Pain Points</div>
-            <div className="col-span-2">Opportunities / Solutions</div>
-          </div>
+      {/* Research */}
 
-          {/* Desktop Rows */}
-          <div className="hidden md:block">
-            {journeyData.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-1 md:grid-cols-6 gap-4 py-2 border-b border-gray-400 ${i % 2 === 0 ? 'bg-zinc-100' : 'bg-zinc-200' }`}
-              >
-                <div className="pl-4 py-2">{row.stage}</div>
-                <div className=" py-2">{row.goals}</div>
-                <div className=" py-2">{row.actions}</div>
-                <div className=" py-2">{row.painPoints}</div>
-                <div className="col-span-2 py-2">{row.opportunities}</div>
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Research</h3>
+            </div>
+            <div className="lg:flex gap-6 flex-3/4">
+              <div className="flex-1/2">
+                <p>
+                  During the research phase, we studied telemarketer workflows and analyzed competitors.
+                </p>
+                <p>
+                  A key insight came from photos collected by our CEO and sales representatives at customer call centers, which showed that most users rely heavily on external resources to complete their tasks.
+                </p>
               </div>
-            ))}
-          </div>
-
-          {/* Mobile Collapsible Cards */}
-          <div className="md:hidden space-y-4">
-            {journeyData.map((row, i) => (
-              <details key={i} className="bg-zinc-800 rounded-lg p-4">
-                <summary className="font-semibold text-white cursor-pointer">
-                  {row.stage}
-                </summary>
-                <div className="mt-2 space-y-2 text-gray-200">
-                  <p>
-                    <strong>User Goals:</strong> {row.goals}
-                  </p>
-                  <p>
-                    <strong>Actions:</strong> {row.actions}
-                  </p>
-                  <p>
-                    <strong>Pain Points:</strong> {row.painPoints}
-                  </p>
-                  <p>
-                    <strong>Opportunities / Solutions:</strong> {row.opportunities}
-                  </p>
-                </div>
-              </details>
-            ))}
+              <div className="flex-1/2">
+                <p>
+                  This reliance creates inefficiencies through constant context switching and increases cognitive load, ultimately slowing down workflows and reducing overall focus during customer interactions.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Hypothesis */}
-      <Section title="Hypothesis">
-        <p className="italic pb-4">
-          By creating a unified, flexible interface that brings together key tools—CRM, compliance, payments, and SMS/email—users will:
-        </p>
-        <ul className="list-disc list-inside space-y-2 pb-4">
-          <li>
-            <strong>Work faster</strong> with fewer interruptions
-          </li>
-          <li>
-            <strong>Make fewer errors</strong> thanks to streamlined workflows
-          </li>
-          <li>
-            <strong>Experience less cognitive load</strong>, staying focused on high-value tasks
-          </li>
-        </ul>
-        <p>
-          This approach transforms the Caller UI from a fragmented set of windows into a{' '}
-          <strong>centralized, efficient workspace</strong> that supports users’ natural workflow and
-          enhances overall productivity.
-        </p>
-      </Section>
 
-      {/* Design Solution */}
-      <Section title="Design Solution">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Flexible Multi-Panel Layout: Resizable, rearrangeable panels adapting to workflows</li>
-          <li>Asynchronous Data Loading: Fetch contact info in the background to reduce wait times</li>
-          <li>Integrated Tools: APIs for SMS, payment, and email embedded, eliminating context-switching</li>
-          <li>Accessibility & Responsiveness: WCAG 2.0 compliance, keyboard navigation, high-contrast design</li>
-          <li>Grid Layout Implementation: Kendo UI for stability, responsiveness, and performance</li>
-        </ul>
-      </Section>
-
-      {/* Design System Contributions */}
-      <Section title="Design System Contributions">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Consolidated legacy UI elements into modular, reusable components</li>
-          <li>Improved information architecture, microcopy, and inline editing components</li>
-          <li>Documented layout specifications and interaction patterns for smooth developer handoff</li>
-          <li>Collaborated with frontend team on .NET framework integration</li>
-        </ul>
-      </Section>
-
-      {/* Challenges & Lessons Learned */}
-      <Section title="Challenges & Lessons Learned">
-        <ul className="list-disc list-inside space-y-1">
-          <li>Balancing simplicity with feature richness</li>
-          <li>Migrating legacy UI without disrupting workflows</li>
-          <li>Coordinating cross-functional teams (design, development, QA)</li>
-          <li>Embedding accessibility from the start</li>
-          <li>Continuous user feedback ensures effective design</li>
-        </ul>
-      </Section>
-
-      {/* Results / Impact */}
-      <Section title="Results / Impact">
-        <ul className="list-disc list-inside space-y-1">
-          <li>
-            Productivity increase: <strong>30%–100%</strong> reported by users
-          </li>
-          <li>
-            Cognitive load reduction: Consolidated multiple tools into one interface
-          </li>
-          <li>
-            User satisfaction: <strong>4.7-star</strong> rating on Capterra, <strong>4.6</strong> on G2
-          </li>
-          <li>Scalability: Design system supports future growth</li>
-          <li>Accessibility: WCAG 2.0 compliance achieved</li>
-        </ul>
-      </Section>
-
-      {/* Caller UI Image */}
-      <div className=" text-gray-200 border-y-1 border-zinc-800">
-        <div className="w-full">
-          <div className="max-w-screen-xl mx-auto   px-12 py-6  flex flex-nowrap">
-            <img src={image002} className='border-zinc-600 border-1' alt="VanillaSoft Caller UI overview" />
+      <div className="w-full px-6 xl:px-0 py-12 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Hypothesis</h3>
+            </div>
+            <div className="flex-3/4">
+              <blockquote className="mb-6 border-l-4 border-teal-300/80 pl-6 italic text-stone-400">
+                If we integrate these external resources directly into the
+                Caller UI, users will experience a more seamless workflow,
+                reduce cognitive load, and complete tasks more efficiently.
+              </blockquote>
+              <blockquote className=" border-l-4 border-teal-300/80 pl-6 italic text-stone-400">
+                Consolidating tools such as customer details, compliance
+                documents, and other essential applications will also generate
+                richer data for the platform’s queue-based routing system,
+                improving overall performance and outcomes.
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Solution */}
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Solution</h3>
+            </div>
+            <div className="lg:flex flex-3/4 gap-6">
+              <div className="flex-1/2">
+                <p>
+                  The redesign introduced a flexible multi-panel layout to
+                  optimize space and support dynamic workflows, which was
+                  innovative at the time. The interface adapts to user tasks,
+                  offering a personalized and responsive experience.
+                </p>
+                <p>
+                  The grid layout, implemented using Kendo UI, ensured stability
+                  and performance at scale. Additional information for each
+                  contact was fetched asynchronously to minimize wait times.
+                </p>
+              </div>
+              <div className="flex-1/2">
+                <p>
+                  Panels could be resized, reorganized, or removed, allowing the
+                  workspace to adapt to user workflows. Inline editing including
+                  undo functionality was available to most of the content
+                  presented with customization options.
+                </p>
+                <p>
+                  The redesign supported business growth, boosted user
+                  retention, and acted as a differentiator in the competitive
+                  CRM market, contributing to strong ROI and long-term success.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Key features */}
+
+      <div className="w-full px-6 xl:px-0 py-12 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Feature</h3>
+            </div>
+            <div className="flex-3/4">
+              <h4 className="text-cyan-300/90">
+                Modular Multi-Panel Layout
+              </h4>
+              <p>
+                A flexible grid allowing users to resize, reorganize, or hide
+                panels based on their specific campaign needs.
+              </p>
+              <h4 className="text-cyan-300/90">Technical Scalability</h4>
+              <p>
+                Implemented via Kendo UI for responsive, stable performance with
+                asynchronous loading of contact details to maintain user flow.
+              </p>
+              <h4 className="text-cyan-300/90">Deep Integration</h4>
+              <p>
+                Embedded APIs for Email, SMS, and Payment tools directly into
+                the workspace to eliminate the need for external applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Outcomes */}
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Outcomes</h3>
+            </div>
+            <div className="lg:flex flex-3/4 gap-6">
+              <div className="flex-1/2">
+                <p>
+                  The redesigned Caller UI became a flagship feature of
+                  VanillaSoft, improving workflows by consolidating tools and
+                  reducing context-switching. An external study showed users
+                  experienced a 30%-100% increase in productivity and completed
+                  tasks with fewer errors.
+                </p>
+                <p>
+                  The responsive, customizable interface allowed users to tailor
+                  their workspace, increasing satisfaction and reducing
+                  cognitive load. User feedback was positive, with VanillaSoft
+                  earning 4.7 stars on Capterra and 4.6 stars on G2.
+                </p>
+              </div>
+              <div className="flex-1/2">
+                <p>
+                  To maintain performance during calls, contact information
+                  loads first while additional data is retrieved asynchronously
+                  in the background.
+                </p>
+                <p>
+                  Several integrations—including email, SMS, payment processing,
+                  and other communication tools—were embedded directly into the
+                  workspace, reducing reliance on external applications.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Business impact */}
+
+      <div className="w-full px-6 xl:px-0 py-12 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <h3 className="mb-8">Results & Business Impact</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <h2 className="text-5xl mb-2 text-cyan-300/90 font-medium">
+                30–100%
+              </h2>
+              <p className="text-lg">
+                Increase in agent productivity across various sales workflows.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-5xl mb-2 text-cyan-300/90 font-medium">
+                4.7/5
+              </h2>
+              <p className="text-lg">
+                Average user rating on Capterra, citing improved ease of use.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-5xl mb-2 text-cyan-300/90">Reduction</h2>
+              <p className="text-lg">
+                Reduced cognitive load through workspace customization and
+                workflow enhancement.
+              </p>
+            </div>
+          </div>
+          <small>Source: VanillaSoft</small>
+        </div>
+      </div>
+
+      {/* Legacy comparison */}
+
+      <div className="w-full py-12 opacity-50 hover:opacity-100 transition-opacity">
+        <div className="max-w-screen-lg mx-auto px-6">
+          <h3 className="text-stone-500 text-xl">
+            Legacy Interface (For Context)
+          </h3>
+          <img src={image006} alt="Old VanillaSoft UI" />
+        </div>
+      </div>
+
+      {/* Footer */}
+
+      <p className="mt-24 text-center">
+        © {new Date().getFullYear()} Yannick Boulanger. All rights reserved.
+      </p>
     </div>
   );
 }

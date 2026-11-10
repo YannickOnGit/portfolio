@@ -1,275 +1,376 @@
-import image001 from '/src/assets/VS-Old-CallerUI.png';
-import image002 from '/src/assets/VS-CallerUI-001.png';
-import type { ReactNode } from 'react';
-
-type SectionProps = {
-  title: string;
-  children: ReactNode;
-};
-
-const Section = ({ title, children }: SectionProps) => (
-  <div className="w-full">
-    <div className="max-w-screen-lg mx-auto px-6">
-      <div>
-        <h2 className=" text-zinc-900 mb-4">{title}</h2>
-      </div>
-      <div className="pt-4 pb-9">{children}</div>
-    </div>
-  </div>
-);
-
-const journeyData = [
-  {
-    stage: '1. Enrollment Invitation Sent',
-    tenantAdminAction: 'Admin enters user’s name & email in Orchestrator',
-    endUserAction: '—',
-    systemResponse: 'System sends enrollment email with secure one-time link',
-    tenantAdminThoughts: '“Great, one less account I have to create manually.”',
-    endUserThoughts: '—',
-    painPoints: 'Email may go to spam; unrecognized sender',
-    opportunities: 'Use brand visuals, friendly sender name',
-  },
-  {
-    stage: '2. User Clicks Enrollment Link',
-    tenantAdminAction: '—',
-    endUserAction: 'Clicks secure link in email',
-    systemResponse: 'Auto-login to self-service portal',
-    tenantAdminThoughts: '—',
-    endUserThoughts: '“Nice, no need to type credentials yet.”',
-    painPoints: 'Expired link frustrates users',
-    opportunities: 'Display expiry in email, allow resend',
-  },
-  {
-    stage: '3. Create Secure Password',
-    tenantAdminAction: '—',
-    endUserAction: 'Chooses & confirms strong password',
-    systemResponse: 'Password saved',
-    tenantAdminThoughts: '—',
-    endUserThoughts: '“That was easy — I feel secure.”',
-    painPoints: 'Overly strict rules may cause errors',
-    opportunities: 'Real-time password strength feedback',
-  },
-  {
-    stage: '4. MFA Setup Prompt',
-    tenantAdminAction: '—',
-    endUserAction: 'Asked to set up MFA if required',
-    systemResponse: 'MFA options: App Code, SMS, Email',
-    tenantAdminThoughts: '—',
-    endUserThoughts: '“Hmm, which one’s best for me?”',
-    painPoints: 'Confusion, app setup friction',
-    opportunities: 'Quick comparison of options',
-  },
-  {
-    stage: '5. MFA Enrollment',
-    tenantAdminAction: '—',
-    endUserAction: 'Completes MFA verification',
-    systemResponse: 'MFA setup confirmed',
-    tenantAdminThoughts: '—',
-    endUserThoughts: '“I’m ready to use VPN now.”',
-    painPoints: 'App download feels technical',
-    opportunities: 'Alternate MFA path + help',
-  },
-  {
-    stage: '6. Access Confirmation',
-    tenantAdminAction: '—',
-    endUserAction: '—',
-    systemResponse: 'Redirect to dashboard with VPN client instructions',
-    tenantAdminThoughts: '—',
-    endUserThoughts: '“I know my next step.”',
-    painPoints: 'No instructions causes stalls',
-    opportunities: 'Quick start tips + visual guide',
-  },
-  {
-    stage: 'Loop for Additional Users',
-    tenantAdminAction: 'Admin repeats steps for each user',
-    endUserAction: '—',
-    systemResponse: '—',
-    tenantAdminThoughts: '“This is tedious for large batches.”',
-    endUserThoughts: '—',
-    painPoints: 'Bulk onboarding fatigue',
-    opportunities: 'Add CSV import feature',
-  },
-];
+import ImageCarousel2 from "../components/ImageCarousel2";
+import image001 from "/src/assets/Case 02/Case-001-Screen-Onboarding-Email.png";
+import image002 from "/src/assets/Case 02/Case-001-Journey-Map.png";
+import image003 from "/src/assets/Case 02/Case-001-Flow-Chart.png";
+import image004 from "/src/assets/Case 02/Case-001-User-Activation.png";
 
 export default function Case02Version2() {
+  const images = [
+    {
+      src: image001,
+      alt: "Onboarding email with account creation link and essential information.",
+    },
+    {
+      src: image002,
+      alt: "Journey map illustrating self-service account provisioning.",
+    },
+    {
+      src: image003,
+      alt: "Authentication flow diagram showing access and validation steps.",
+    },
+    {
+      src: image004,
+      alt: "Account activation and password setup screen.",
+    },
+  ];
+
   return (
-    <div>
-      <div className="bg-zinc-950 w-full text-gray-200">
-        <div className="max-w-screen-lg mx-auto flex flex-nowrap space-x-1 px-6 pt-20 pb-12 mb-12 ">
-          <div className="basis-6/8">
-            <h4 className="text-indigo-400 pb-4">
-              UX Case 02: Adaptiv Networks MyConnect VPN Enrollment Flow
-            </h4>
-            <h1 className="text-white">Self-Service Onboarding & Multi-Factor Authentication</h1>
-            <h4 className="pt-4">
-              Designed the self-service enrollment and authentication for Adaptiv Networks’ MyConnect VPN, enabling independent onboarding, secure credential setup, and MFA. Delivered a scalable, intuitive solution that balances usability with enterprise security and reduces IT support reliance for hybrid workforce management.
-            </h4>
+    <div className="text-white  ">
+      {/* Intro Header */}
+      <div className="w-full px-6 xl:px-0">
+        <div className="max-w-screen-lg mx-auto">
+          <h1>Case 002 : Efficient Account Provisioning</h1>
+          <h2 className="uppercase mb-12 font-light leading-none bg-stone-800/50">
+          <span className="uppercase font-bold">VPN Enrollment Flow </span>
+            Self-Service Onboarding & MFA Authentication
+          </h2>
+          <div className="lg:flex gap-6 py-6">
+            <div className="flex-1/3 mb-6">
+              <h4 className="text-cyan-300/90">
+                Contributions
+              </h4>
+              <ul className="space-y-1">
+                <li>Contextual & User Research</li>
+                <li>Workflow & Task Analysis</li>
+                <li>Identity & Access Management (IAM) Strategy</li>
+                <li>Interaction Design & UI/UX</li>
+                <li>Front-End Integration</li>
+              </ul>
+            </div>
+            <div className="flex-2/3">
+              <h4 className="text-cyan-300/90">Assignment</h4>
+              <p>
+                The objective of this project was to streamline the MyConnect
+                VPN user onboarding process for partners and tenants, enabling
+                self-service account creation while enhancing security with
+                Multi-Factor Authentication (MFA).
+              </p>
+              <p>
+                The project aimed to reduce friction, minimize manual IT
+                involvement, and provide a scalable onboarding process.
+                Additionally, it sought to integrate security best practices
+                without compromising usability, creating a flexible experience
+                for both novice and experienced users.
+              </p>
+              <p>
+                The role encompassed research, workflow analysis, solution
+                architecture, and the implementation of the enrollment flow
+                using Auth0.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Context */}
-      <Section title="Context">
-        <p className="pb-4">
-          Adaptiv Networks is a multi-tenant provider of cloud-managed networking solutions, specializing in Software-Defined Wide Area Network (SD-WAN) technology. Their platform enables businesses to optimize network performance, reliability, and security while simplifying management and reducing operational costs.
-        </p>
-        <p className="pb-4">
-          To support hybrid and remote workforces, Adaptiv Networks offers MyConnect VPN, a secure remote access solution that integrates with their SD-WAN infrastructure. Efficient onboarding and authentication for remote employees, partners, and tenants is critical to ensure seamless connectivity, protect sensitive data, and maintain enterprise-grade security.
-        </p>
-      </Section>
+      {/* Main Image Feature */}
 
-      {/* Business Problem */}
-      <Section title="Business Problem">
-        <ul className="list-disc list-outside space-y-1 pl-4">
-          <li>
-            <strong>Manual onboarding is resource-intensive and does not scale:</strong>
-            <p>IT teams must create accounts individually, slowing adoption for partners, tenants, and new employees.</p>
-          </li>
-          <li>
-            <strong>Limited self-service capabilities restrict user independence:</strong>
-            <p>Customers cannot independently onboard or manage users, increasing operational overhead.</p>
-          </li>
-          <li>
-            <strong>Security and compliance are paramount:</strong>
-            <p>Multi-Factor Authentication (MFA) is required to meet industry standards, but default workflows can be confusing or inconsistent for end users.</p>
-          </li>
-          <li>
-            <strong>High reliance on IT support reduces efficiency:</strong>
-            <p>Without an intuitive self-service experience, organizations face higher support costs and slower user adoption.</p>
-          </li>
-        </ul>
-      </Section>
+      <ImageCarousel2 images={images} />
 
-      {/* Business Goal */}
-      <Section title="Business Goal">
-        <ul className="list-disc list-outside space-y-1 pl-4">
-          <li>
-            <strong>Streamline Onboarding & Self-Management:</strong>
-            Deliver an automated, user-friendly enrollment flow that reduces IT dependency and accelerates adoption.
-          </li>
-          <li>
-            <strong>Enhance Security & Compliance:</strong>
-            Implement flexible MFA options to protect sensitive data and meet enterprise security requirements.
-          </li>
-          <li>
-            <strong>Enable Scalable Operations:</strong>
-            Provide a multi-tenant, self-service solution that supports partners and tenants independently, with potential premium features for recurring revenue.
-          </li>
-        </ul>
-      </Section>
+      {/* Problem & Goal Section */}
 
-      {/* Research */}
-      <Section title="Research">
-        <p className="pb-4">
-          Mapped user flows: enrollment, login, password reset, and MFA. Identified pain points to ensure a smooth user journey. Auth0 was selected as the IAM vendor; documentation was reviewed to understand framework capabilities and optimize experience.
-        </p>
-      </Section>
-
-      {/* User Journey Map */}
-      <div className="w-full text-gray-800 py-6 mb-12 border-y-1 border-zinc-800 text-sm">
-        <div className="max-w-screen-xl mx-auto">
-          <h3 className="text-indigo-800 text-2xl pb-8">User Journey: Caller UI Workflow</h3>
-
-          {/* Desktop Table */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-gray-700 pb-4 font-semibold text-zinc-800">
-            <div>Stage</div>
-            <div>Tenant/Admin Action</div>
-            <div>End-User Action</div>
-            <div>System Response</div>
-            <div>Tenant/Admin Thoughts</div>
-            <div>End-User Thoughts</div>
-            <div>Pain Points / Risks</div>
-            <div>Opportunities / Improvement</div>
-          </div>
-
-          {/* Desktop Rows */}
-          <div className="hidden md:block">
-            {journeyData.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-1 md:grid-cols-6 gap-4 py-2 border-b border-gray-400 ${i % 2 === 0 ? 'bg-zinc-200' : 'bg-zinc-300'}`}
-              >
-                <div className="px-2 py-1">{row.stage}</div>
-                <div className="px-2 py-1">{row.tenantAdminAction}</div>
-                <div className="px-2 py-1">{row.endUserAction}</div>
-                <div className="px-2 py-1">{row.systemResponse}</div>
-                <div className="px-2 py-1">{row.tenantAdminThoughts}</div>
-                <div className="px-2 py-1">{row.endUserThoughts}</div>
-                <div className="px-2 py-1">{row.painPoints}</div>
-                <div className="px-2 py-1">{row.opportunities}</div>
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="flex">
+            <div className="flex-1/4">
+              <h3 className="">Context</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  Adaptiv Networks is a multi-tenant company providing
+                  cloud-managed SD-WAN and secure VPN solutions for businesses.
+                </p>
               </div>
-            ))}
+              <div className=" flex-1/2">
+                <p>
+                  Its VPN service ensures secure connectivity for remote employees
+                  as part of a larger self-service portal, allowing businesses to
+                  manage network users independently while supporting flexibility,
+                  scalability, and security.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
 
-          {/* Mobile Collapsible Cards */}
-          <div className="md:hidden space-y-4">
-            {journeyData.map((row, i) => (
-              <details
-                key={i}
-                className="bg-zinc-800 rounded-lg p-4"
-              >
-                <summary className="font-semibold text-white cursor-pointer">
-                  {row.stage}
-                </summary>
-                <div className="mt-2 space-y-2 text-gray-200">
-                  <p><strong>Tenant/Admin Action:</strong> {row.tenantAdminAction}</p>
-                  <p><strong>End-User Action:</strong> {row.endUserAction}</p>
-                  <p><strong>System Response:</strong> {row.systemResponse}</p>
-                  <p><strong>Tenant/Admin Thoughts:</strong> {row.tenantAdminThoughts}</p>
-                  <p><strong>End-User Thoughts:</strong> {row.endUserThoughts}</p>
-                  <p><strong>Pain Points / Risks:</strong> {row.painPoints}</p>
-                  <p><strong>Opportunities / Improvement:</strong> {row.opportunities}</p>
-                </div>
-              </details>
-            ))}
+      {/* Observations */}
+
+      <div className="w-full px-6 xl:px-0 py-12 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3>Observation</h3>
+            </div>
+            <div className="flex-3/4">
+              <blockquote className="border-l-4 border-teal-300/80 pl-6 italic text-stone-400 text-2xl">
+                <p>
+                  The existing MyConnect user creation process was manual, which
+                  was sufficient for initial testing but became time-consuming and
+                  resource-intensive as adoption grew.
+                </p>
+              </blockquote>
+              <blockquote className="mt-6 border-l-4 border-teal-300/80 pl-6 italic text-stone-400 text-2xl">
+                <p>
+                  Partners and tenants were unable to independently onboard users,
+                  limiting enthusiasm and adoption. The lack of self-service
+                  created bottlenecks for IT teams and hindered operational
+                  efficiency.
+                </p>
+              </blockquote>
+              <blockquote className="mt-6 border-l-4 border-teal-300/80 pl-6 italic text-stone-400 text-2xl">
+                <p>
+                  Additionally, Multi-Factor Authentication (MFA) was critical for
+                  meeting security and compliance standards but was not yet
+                  implemented. The current enrollment process risked being
+                  perceived as incomplete or insecure by security-conscious
+                  customers.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {/* Research */}
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className="">Research</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  We mapped key user flows, including enrollment, login, password
+                  reset, and MFA setup, to identify friction points. Auth0 was
+                  selected as the Identity and Access Management (IAM) platform.
+                </p>
+              </div>
+              <div className=" flex-1/2">
+                <p>
+                  I conducted a deep dive into its documentation to
+                  understand its framework, evaluate potential challenges, and
+                  identify opportunities to streamline the user experience while
+                  supporting secure authentication workflows.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Hypothesis */}
-      <Section title="Hypothesis">
-        <p className="italic pb-4">
-          By designing a self-service VPN enrollment flow with integrated MFA guidance, users will:
-        </p>
-        <ul className="list-disc list-outside space-y-2 ml-4 pb-4">
-          <li><strong>Onboard faster</strong> without relying on IT support</li>
-          <li><strong>Complete security steps confidently</strong> with clear MFA instructions and options</li>
-          <li><strong>Manage multiple accounts efficiently</strong> in a multi-tenant environment</li>
-        </ul>
-        <p>
-          This approach transforms VPN onboarding from a technical, error-prone process into a <strong>streamlined, user-friendly experience</strong> that balances security, usability, and scalability.
-        </p>
-      </Section>
 
-      {/* Solution */}
-      <Section title="Solution">
-        <p className="pb-4">
-          Partners/Tenants submit first name, last name, and email. Users receive a one-time password via email. Clicking the link auto-logs the user into the self-service portal. Users set a secure password, then complete MFA if purchased, adding a layer of security.
-        </p>
-      </Section>
+      <div className="w-full px-6 xl:px-0 py-16 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className=" mb-12">Hypothesis</h3>
+            </div>
+            <div className="flex-3/4">
+              <blockquote className="mb-6 border-l-4 border-cyan-200/80 pl-6 italic text-stone-400">
+                <p>
+                  <strong className="">Streamlined Enrollment with Auth0:</strong>{" "}
+                  Leveraging Auth0’s functionality would simplify the enrollment
+                  process, reduce friction, and improve user satisfaction.
+                </p>
+              </blockquote>
+              <blockquote className="mb-6 border-l-4 border-cyan-200/80 pl-6 italic text-stone-400">
+                <p>
+                  <strong className="">
+                    Clear Exit Paths and Issue Resolution:
+                  </strong>{" "}
+                  Anticipating and resolving enrollment issues early would prevent
+                  users from getting stuck, ensuring smoother completion.
+                </p>
+              </blockquote>
+              <blockquote className="mb-6 border-l-4 border-cyan-200/80 pl-6 italic text-stone-400">
+                <p>
+                  <strong className="">Optional MFA Implementation:</strong>{" "}
+                  Offering MFA as a configurable feature would meet varying
+                  security requirements, providing both flexibility and enhanced
+                  protection.
+                </p>
+              </blockquote>
+              <blockquote className="border-l-4 border-cyan-200/80 pl-6 italic text-stone-400">
+                <p>
+                  <strong className="">Recognized risk:</strong> MFA introduces
+                  additional steps that may frustrate some users.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className="">Solution</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+                <p>
+                  Partners and tenants can create a new MyConnect user by
+                  submitting the user’s first name, last name, and email. Once
+                  the license is deployed, users receive a one-time password via
+                  email—eliminating insecure credential delivery.
+                </p>
+              </div>
+              <div className="flex-1/2">
+                <p>
+                  Users click a link to log into the self-service portal, create
+                  a secure password, and, if MFA is enabled, complete the
+                  additional authentication steps. MFA options include One-Time
+                  Code (app-based), Text (SMS), and Email, offering flexibility
+                  and accommodating varying security preferences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Solution Strategy */}
+
+      <div className="w-full px-6 xl:px-0 py-16 bg-stone-800/20 border-stone-800">
+
+
+        <div className="w-full px-6 xl:px-0">
+          <div className="max-w-screen-lg mx-auto">
+            <div className="lg:flex">
+              <div className="flex-1/4">
+                <h3 className="">Feature</h3>
+              </div>
+              <div className="flex-3/4">
+                <h4 className="text-cyan-300/90">
+                  Simplified Self-Service Enrollment
+                </h4>
+                <p className="mb-6">
+                  Enables partners and tenants to onboard users independently,
+                  reducing IT tickets.
+                </p>
+
+                <h4 className="text-cyan-300/90">Flexible MFA Options</h4>
+                <p className="mb-6">
+                  Offers SMS, Email, and Authenticator App options to balance
+                  security and user convenience.
+                </p>
+
+                <h4 className="text-cyan-300/90">Secure Credential Delivery</h4>
+                <p>
+                  Automated one-time password (OTP) delivery via email to
+                  eliminate insecure manual credential sharing.
+                </p>
+
+                <h4 className="text-cyan-300/90">Auth0 Integration</h4>
+                <p>Streamlined IAM workflows and scalable identity management.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
 
 
 
+      <div className="w-full px-6 xl:px-0 py-12">
+        <div className="max-w-screen-lg mx-auto">
+
+          <div className="lg:flex">
+            <div className="flex-1/4">
+              <h3 className="">Outcomes</h3>
+            </div>
+            <div className="flex gap-6 flex-3/4">
+              <div className=" flex-1/2">
+              <p>
+                Initial user testing provided valuable insights into the MFA
+                implementation. App-based one-time codes were the most
+                frustrating due to device dependency and QR code setup,
+                occasionally leading to lockouts.
+              </p>
+              <p>
+                SMS-based authentication was smooth and intuitive, with
+                minimal complaints, while email verification was convenient
+                and easy to use, though slightly less secure than SMS.
+              </p>
+            </div>
+            <div className="flex-1/2">
+              <p>
+                These findings highlighted important trade-offs between
+                security and usability.
+              </p>
+              <p>
+                Default Auth0 settings did not fully address organizational
+                security requirements, suggesting that future improvements
+                should include penetration testing and a more tailored MFA
+                strategy to optimize both security and user experience.
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-      {/* User Outcomes */}
-      <Section title="User Outcomes">
-        <ul className="list-disc list-outside space-y-1 pl-4">
-          <li><strong>One-Time Code (App-based):</strong> Most frustrating; app download, QR code scan, backup code required.</li>
-          <li><strong>Text (SMS):</strong> Minimal complaints; quick and familiar for users.</li>
-          <li><strong>Email:</strong> Convenient; longer code lifespan; easy to copy/paste, though slightly less secure than SMS.</li>
-        </ul>
-      </Section>
 
-      {/* Observations */}
-      <Section title="Observations">
-        <p className="pb-4">
-          MFA implementation highlighted weaknesses in default Auth0 options and a lack of tailored security guidance. Users/developers may assume full protection without understanding trade-offs. Clear guidance and penetration testing are recommended to select MFA strategies that align with organizational security needs.
-        </p>
-      </Section>
-
-      {/* MFA Options Image */}
-
+      {/* Results Section */}
+      <div className="w-full px-6 xl:px-0 py-16 bg-stone-800/20 border-stone-800">
+        <div className="max-w-screen-lg mx-auto">
+          <h3 className="mb-8">Results & Business Impact</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-cyan-300/90">Seamless Onboarding</h4>
+              <p>
+                The new self-service enrollment flow reduces reliance on IT
+                teams, removing manual bottlenecks and enabling faster account
+                creation for partners and tenants.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-cyan-300/90">Flexible & Secure MFA</h4>
+              <p>
+                Optional MFA provides flexible security and compliance
+                adherence.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-cyan-300/90">Scalable Architecture</h4>
+              <p>
+                The Auth0-based solution provides a foundation that can grow
+                with user adoption, supporting additional tenants and partners
+                without major workflow redesigns.{" "}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-cyan-300/90">Improved User Confidence</h4>
+              <p>
+                By standardizing credential delivery and providing clear, guided
+                enrollment steps, users experience fewer errors and confusion
+                during onboarding.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className=" mt-24 text-center">
+        © {new Date().getFullYear()} Yannick Boulanger. All rights reserved.
+      </p>
     </div>
   );
 }
